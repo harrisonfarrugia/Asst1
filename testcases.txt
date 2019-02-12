@@ -1,0 +1,15 @@
+Workload E:
+
+Workload E tests mymalloc by saturating the memory array with a pointer the size of all available memory,
+then repeatedly attempting to malloc 1 byte. The purpose of this workload is to test the error reporting
+of mymalloc when too much memory is attempted to be allocated over and over. The desired output is an error
+report for each failed malloc, and one error report for attempting to free the null pointer that cannot be allocated.
+
+Workload F:
+
+Workload F tests whether or not mymalloc merges free blocks that are not adjacent to one another, which is should not.
+This workload creates an array, then mallocs 1 byte for each element. It then frees every other block, and attempts to
+malloc for a size that is larger than any individual available block of memory. The desired output for this function is
+repeated error reports for failed mallocs.
+
+
